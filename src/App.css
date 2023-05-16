@@ -1,0 +1,136 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+
+body{
+   background-color: #262a2b;
+   color: white;
+   /* background: radial-gradient(circle, rgba(245,240,240,1) 28%, rgba(7,8,8,1) 61%); */
+}
+
+.container{
+   width: 100%;
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.app-wrapper{
+   background-color: #262a2b;
+   min-width: 450px;
+   min-height: 650px;
+   padding: 30px;
+   box-sizing: border-box;
+   border-radius: 10px;
+   box-shadow: 3px 6px 40px #000;
+}
+
+.header h1{
+   color: beige;
+   text-align: center;
+   margin: 30px 0;
+}
+
+.task-input{
+   outline: none;
+   width: 350px;
+   height: 25px;
+   padding: 15px;
+   margin-right: 25px;
+   font-size: 16px;
+   color: #fff;
+   background-color: #262a2b;
+   /* background-color: #000000; */
+   border: none;
+   border-bottom: 1px solid white;
+   border-radius: 10px;
+}
+
+.button-add{
+   width: 70px;
+   padding: 15px 15px;
+   font-size: 16px;
+   border: 0;
+   height: 45px;
+   cursor: pointer;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+  background-color: beige;
+}
+
+.list-item{
+   display: flex;
+   height: 40px;
+   margin: 20px 0;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   padding: 1px;
+   /* max-height: 30px; */
+}
+
+.button-complete,
+.button-delete,
+.button-edit{
+   border: none;
+   outline: none;
+   cursor: pointer;
+   background-color: transparent;
+   font-size: 28px;
+   border-radius: 50%;
+}
+
+.button-complete {
+   color: rgb(113, 255, 47);
+   margin-right: 10px;
+}
+
+.button-edit{
+   color: rgb(39, 128, 184);
+   margin-right: 10px;
+}
+
+.button-delete{
+   color: beige;
+   margin-left: 12px;
+}
+
+.button-delete:hover{
+   color: red;
+}
+
+.complete{
+   text-decoration-style: solid;
+   text-decoration-line: line-through;
+   text-decoration-color: red;
+   content: "Completed!";
+}
+
+
+.check{
+   width: 24px;
+   height: 30px;
+}
+
+.btn{
+   margin-right: 12px;
+   margin-left: 12px;
+}
+
+.list{
+   width: 220px;
+   /* background-color: #12343b; */
+   background-color: #262a2b;
+   border: none;
+   color: #ccc;
+   font-size: 16px;
+   padding-left: 10px;
+   margin-right: 15px;
+}
+
+input:focus,
+button:focus {
+   outline: none;
+}
