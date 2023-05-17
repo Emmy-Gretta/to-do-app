@@ -4,7 +4,7 @@ import '../App.css'
 export default function Header() {
   return (
     <div className='header'> 
-      <h1>Todo-List</h1>
+      <h1>Todo-App</h1>
     </div>
   );
 };

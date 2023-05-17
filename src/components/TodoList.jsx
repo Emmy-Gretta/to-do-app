@@ -38,6 +38,7 @@ const TodoList = ({ todos, setTodos, setEditTodo, editTodo, filter, setFilter })
 
   return (
     <div>
+      <div className='none'>
       {filteredTodos.map((todo) => (
         <li className="list-item" key={todo.id}>
           <input
@@ -46,19 +47,20 @@ const TodoList = ({ todos, setTodos, setEditTodo, editTodo, filter, setFilter })
             className={`list ${todo.completed ? 'complete' : ''}`}
             onChange={(e) => e.preventDefault()}
           />
-          <div>
-            <button className="button-complete task-button" onClick={() => handleComplete(todo)}>
+          <div className='funvButtons'>
+            <button className="button-complete" onClick={() => handleComplete(todo)}>
               <i className="ri-checkbox-circle-line"></i>
             </button>
-            <button className="button-edit task-button" onClick={() => handleEdit(todo)}>
+            <button className="button-edit" onClick={() => handleEdit(todo)}>
               <i className="ri-edit-box-fill"></i>
             </button>
-            <button className="button-delete task-button" onClick={() => handleDelete(todo)}>
+            <button className="button-delete" onClick={() => handleDelete(todo)}>
               <i className="ri-delete-bin-line"></i>
             </button>
           </div>
         </li>
       ))}
+      </div>
       {
         filteredTodos.length === 0 ? 'Please, Add task! ' : 
         <div className="filter-buttons">
