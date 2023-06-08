@@ -1,8 +1,11 @@
+import axios from 'axios';
 import React, { useEffect } from 'react';
 import {v4 as uuidv4} from 'uuid';
+import useNavigate from "react-router-dom";
 
 const Form = ({input, setInput, todos, setTodos,editTodo, setEditTodo}) =>  {
 
+  const navigate = useNavigate()
   //Updating the task
   const updateTodo = (title, id, completed) => {
     const newTodo =  todos.map((todo) => 
@@ -32,6 +35,14 @@ const Form = ({input, setInput, todos, setTodos,editTodo, setEditTodo}) =>  {
     }else{
       updateTodo(input, editTodo.id, editTodo.completed)
     }
+    console.log(todos);
+    axios.post('https://localhost:4500/task/', todos)
+    .then(res => {
+      console.log(res.data);
+      navigate('/')
+    }).catch(err => {
+      console.log({ error: err });
+    })
 
   };
 

@@ -23,7 +23,7 @@ db.once('open', () => {
 })
 
 app.get('/', (req, res) => {
-   res.send('Welcome to our todo app');
+  res.send({ message: "Welcome to our todo app!" });
 })
 
 app.listen(PORT, () => {

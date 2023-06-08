@@ -12,10 +12,12 @@ const TodoList = ({ todos, setTodos, setEditTodo, editTodo, filter, setFilter })
       })
     );
   };
+
   // Editing the name of the existing task
   const handleEdit = (todo) => {
     setEditTodo(todo);
   };
+
   // Clearing all completed tasks from the list
   const handleClearCompletedTask = () => {
     setTodos((prevTodos) => {
@@ -23,10 +25,12 @@ const TodoList = ({ todos, setTodos, setEditTodo, editTodo, filter, setFilter })
       return newTodo;
     });
   };
+
   // Deleting the existing task
   const handleDelete = (todo) => {
     setTodos(todos.filter((item) => item.id !== todo.id));
   };
+
   // Filter buttons
   const handleFilter = (completed) => {
     setFilter(completed);

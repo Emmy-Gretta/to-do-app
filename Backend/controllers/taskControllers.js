@@ -1,3 +1,4 @@
+const { response } = require('express');
 const Tasks = require('../Models/task.model')
 
 //Add task
@@ -28,7 +29,7 @@ const allTasks = async (req, res) => {
 }
 
 //one task
-const oneTask = async (res, req) => {
+const oneTask = async (rep, res) => {
    Tasks.findById(req.params.id)
    .then((task) => res.json(task))
    .catch((err) => res.json(err.message));
@@ -52,5 +53,27 @@ const updateTask = async (req, res) => {
             message: "Task updated successsfully"
          })
       }
+   }).catch(error => {
+      res.send({
+         message: error.message
+      })
    })
+}
+
+//Deleting tasks
+const deleteTask = async (req, res) => {
+   Tasks.findByIdAndDelete(req.params.id)
+   .then(() => 
+      res.json({
+         message: 'Task deleted successfully!'
+      })
+   ).catch(err => res.status(400).send(err));
+}
+
+module.exports = {
+   addTask,
+   allTasks,
+   oneTask,
+   updateTask,
+   deleteTask
 }
